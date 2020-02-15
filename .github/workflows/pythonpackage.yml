@@ -18,7 +18,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Compile Node.js
       run: |
-        python ./configure.py
+        python ./configure.py --experimental-quic
         make -j2 V=1
     - name: Test JS Suites
       run: |

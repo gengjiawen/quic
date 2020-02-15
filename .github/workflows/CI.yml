@@ -20,7 +20,7 @@ jobs:
       - name: Environment Information
         run: npx envinfo
       - name: Build
-        run: ./configure && make -j2
+        run: ./configure --experimental-quic && make -j2
   build-windows:
     runs-on: windows-latest
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Install deps
         run: choco install nasm
       - name: Build
-        run: ./vcbuild.bat
+        run: ./vcbuild.bat experimental-quic
   build-macOS:
     runs-on: macos-latest
     steps:
@@ -38,7 +38,7 @@ jobs:
       - name: Environment Information
         run: npx envinfo
       - name: Build
-        run: ./configure && make -j8
+        run: ./configure --experimental-quic && make -j8
   lint-addon-docs:
     runs-on: ubuntu-latest
     steps:
